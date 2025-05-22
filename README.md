@@ -7,8 +7,8 @@ Here's a clean and developer-friendly `README.md` setup section so anyone can cl
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Sarangkale66/Billeasy-Junior_Backend_Engineer-Task
+cd Billeasy-Junior_Backend_Engineer-Task
 ```
 
 ### 2. Install Dependencies
@@ -17,7 +17,8 @@ cd your-repo-name
 npm install
 ```
 
-### 3. Set Up PostgreSQL (Docker)
+### 3. Set Up PostgreSQL 
+- using (Docker)
 
 If you don’t have PostgreSQL locally, you can run it using Docker:
 
@@ -30,12 +31,15 @@ docker run --name app_db \
   -d postgres
 ```
 
+- using Cloud Postgres URL from Avien.io, neon.tech, supabase etc
+
 ### 4. Configure Environment Variables
 
 Create a `.env` file in the root with the following content:
 
 ```
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/app_db"
+DATABASE_URL={ production_url }
 JWT_SECRET="your_jwt_secret"
 PORT=5000
 ```
@@ -45,8 +49,8 @@ PORT=5000
 ### 5. Initialize Prisma
 
 ```bash
-npx prisma generate
 npx prisma migrate dev --name init
+npx prisma generate
 ```
 
 ### 6. Start the Server
