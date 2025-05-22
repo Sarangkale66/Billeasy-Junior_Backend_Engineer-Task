@@ -39,7 +39,6 @@ Create a `.env` file in the root with the following content:
 
 ```
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/app_db"
-DATABASE_URL={ production_url }
 JWT_SECRET="your_jwt_secret"
 PORT=5000
 ```
