@@ -12,7 +12,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
-                                              
+
+app.get("/",(req,res)=>{
+  res.json({
+    message:"hello world"
+  })
+});
+
 app.post('/signup', signup); // POST /signup
 app.post('/login', login); // POST /login
 app.use('/books', bookRoutes);   // All book-related routes
