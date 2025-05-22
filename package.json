@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate":"npx prisma migrate dev --name init && npx prisma generate",
     "dev": "npx tsc -b && node dist/server.js"
   },
   "prisma": {

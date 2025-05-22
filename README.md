@@ -48,9 +48,8 @@ PORT=5000
 ### 5. Initialize Prisma
 
 ```bash
-npx prisma migrate dev --name init
-npx prisma generate
-npx prisma db seed
+npm run db:migrate
+npx prisma db seed # add dummy data
 ```
 
 ### 6. Start the Server
