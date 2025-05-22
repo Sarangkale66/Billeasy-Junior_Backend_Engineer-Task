@@ -50,6 +50,7 @@ PORT=5000
 ```bash
 npx prisma migrate dev --name init
 npx prisma generate
+npx prisma db seed
 ```
 
 ### 6. Start the Server
