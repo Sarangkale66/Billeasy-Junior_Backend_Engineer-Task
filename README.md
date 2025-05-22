@@ -68,23 +68,44 @@ Your API will now be running at `http://localhost:5000`.
 ### Auth
 
 * `POST /signup` – Register user
+
+![/signup](./images/Signup.png)
+
 * `POST /login` – Login and get JWT token
+
+![/login](./images/Login.png)
 
 ### Books
 
 * `POST /books` – Add book *(auth required)*
-* `GET /books` – Get all books with pagination/filter
+
+![/books](./images/Books2.png)
+
+* `GET /books?page={number}&limit={number}` – Get all books with pagination/filter
+
+![/books](./images/Books1.png)
+
 * `GET /books/:id` – Get book details with average rating + reviews
+
+![/books/:id](./images/Books4.png)
+
 * `POST /books/:id/reviews` – Submit review *(auth, one per user)*
+![/books/:id/reviews](./images/Books3.png)
+
 
 ### Reviews
 
 * `PUT /reviews/:id` – Update your own review *(auth)*
+![/reviews/:id](./images/ReviewUpdate.png)
+
 * `DELETE /reviews/:id` – Delete your own review *(auth)*
+![/reviews/:id](./images/ReviewDelete.png)
 
 ### Search
 
 * `GET /search?query=someTitleOrAuthor` – Case-insensitive search by title/author
+
+![/reviews/:id](./images/Search.png)
 
 ---
 
