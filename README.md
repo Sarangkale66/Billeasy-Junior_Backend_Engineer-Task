@@ -1,4 +1,3 @@
-Your `README.md` setup section is very clear and well-structured! Below is a **cleaned-up version** with spelling, grammar, and formatting improvements to make it more professional and developer-friendly:
 
 ---
 
