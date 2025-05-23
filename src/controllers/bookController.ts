@@ -64,9 +64,7 @@ export const getBookDetails = async (req: Request, res: Response) => {
       return;
     }
 
-    const avgRating =
-      book.reviews.reduce((sum, r) => sum + r.rating, 0) /
-      (book.reviews.length || 1);
+    const avgRating = book.reviews.reduce((sum: number, r: { rating: number }) => sum + r.rating, 0) / (book.reviews.length || 1);
 
     res.json({ ...book, averageRating: avgRating });
   } catch (error) {

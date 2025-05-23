@@ -1,4 +1,4 @@
-Here's a clean and developer-friendly `README.md` setup section so anyone can clone and run your project smoothly with **Node.js**, **Express**, **Prisma**, **PostgreSQL**, and **JWT**:
+Your `README.md` setup section is very clear and well-structured! Below is a **cleaned-up version** with spelling, grammar, and formatting improvements to make it more professional and developer-friendly:
 
 ---
 
@@ -11,16 +11,38 @@ git clone https://github.com/Sarangkale66/Billeasy-Junior_Backend_Engineer-Task
 cd Billeasy-Junior_Backend_Engineer-Task
 ```
 
-### 2. Install Dependencies
+This `README.md` provides two ways to set up the application:
+
+* Using **Docker Compose**
+* Using a **local system setup**
+
+---
+
+### 🐳 Using Docker Compose
+
+Run the following commands one by one to set up and run the application:
+
+```bash
+docker compose build
+docker compose run app npm run db:migrate
+docker compose up
+```
+
+---
+
+### 💻 Using Local System Setup
+
+#### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Set Up PostgreSQL 
-- using (Docker)
+#### 3. Set Up PostgreSQL
 
-If you don’t have PostgreSQL locally, you can run it using Docker:
+You can either run PostgreSQL locally or use a cloud provider.
+
+**A. Using Docker (local PostgreSQL)**
 
 ```bash
 docker run --name app_db \
@@ -31,11 +53,14 @@ docker run --name app_db \
   -d postgres
 ```
 
-- using Cloud Postgres URL from Avien.io, neon.tech, supabase etc
+**B. Using Cloud PostgreSQL**
+Use services like [Neon](https://neon.tech), [Supabase](https://supabase.com), [Aiven](https://aiven.io), etc., and get a connection URL.
 
-### 4. Configure Environment Variables
+---
 
-Create a `.env` file in the root with the following content:
+#### 4. Configure Environment Variables
+
+Create a `.env` file in the root directory with the following content:
 
 ```
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/app_db"
@@ -43,69 +68,68 @@ JWT_SECRET="your_jwt_secret"
 PORT=5000
 ```
 
-> 🔐 Replace `"your_jwt_secret"` with a secure secret key.
+> 🔐 Replace `"your_jwt_secret"` with a secure, random secret key.
 
-### 5. Initialize Prisma
+---
+
+#### 5. Initialize Prisma
 
 ```bash
 npm run db:migrate
-npx prisma db seed # add dummy data
+npx prisma db seed # optional: populate with dummy data
 ```
 
-### 6. Start the Server
+---
+
+#### 6. Start the Server
 
 ```bash
 npm run dev
 ```
 
-Your API will now be running at `http://localhost:5000`.
+Your API will be running at `http://localhost:5000`.
 
 ---
 
 ## 🧪 API Endpoints Overview
 
-### Auth
+### 🔐 Auth
 
-* `POST /signup` – Register user
+* `POST /signup` – Register a user
+  ![Signup](./images/Signup.png)
 
-![/signup](./images/Signup.png)
-
-* `POST /login` – Login and get JWT token
-
-![/login](./images/Login.png)
-
-### Books
-
-* `POST /books` – Add book *(auth required)*
-
-![/books](./images/Books2.png)
-
-* `GET /books?page={number}&limit={number}` – Get all books with pagination/filter
-
-![/books](./images/Books1.png)
-
-* `GET /books/:id` – Get book details with average rating + reviews
-
-![/books/:id](./images/Books4.png)
-
-* `POST /books/:id/reviews` – Submit review *(auth, one per user)*
-![/books/:id/reviews](./images/Books3.png)
-
-
-### Reviews
-
-* `PUT /reviews/:id` – Update your own review *(auth)*
-![/reviews/:id](./images/ReviewUpdate.png)
-
-* `DELETE /reviews/:id` – Delete your own review *(auth)*
-![/reviews/:id](./images/ReviewDelete.png)
-
-### Search
-
-* `GET /search?query=someTitleOrAuthor` – Case-insensitive search by title/author
-
-![/reviews/:id](./images/Search.png)
+* `POST /login` – Login and receive a JWT
+  ![Login](./images/Login.png)
 
 ---
 
-Let me know if you'd like to include a `Postman` collection or Swagger/OpenAPI docs!
+### 📚 Books
+
+* `POST /books` – Add a book *(auth required)*
+  ![Add Book](./images/Books2.png)
+
+* `GET /books?page={number}&limit={number}` – List books with pagination/filtering
+  ![Books Pagination](./images/Books1.png)
+
+* `GET /books/:id` – Get book details with average rating and reviews
+  ![Book Details](./images/Books4.png)
+
+* `POST /books/:id/reviews` – Submit a review *(auth required, one per user/book)*
+  ![Submit Review](./images/Books3.png)
+
+---
+
+### ✍️ Reviews
+
+* `PUT /reviews/:id` – Update your review *(auth required)*
+  ![Update Review](./images/ReviewUpdate.png)
+
+* `DELETE /reviews/:id` – Delete your review *(auth required)*
+  ![Delete Review](./images/ReviewDelete.png)
+
+---
+
+### 🔍 Search
+
+* `GET /search?query=someTitleOrAuthor` – Search books by title or author (case-insensitive)
+  ![Search](./images/Search.png)

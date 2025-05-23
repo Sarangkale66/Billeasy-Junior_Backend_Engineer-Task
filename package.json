@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:migrate":"npx prisma migrate dev --name init && npx prisma generate",
-    "dev": "npx tsc -b && node dist/server.js",
-    "start":"npm run db:migrate && npm run dev"
+    "db:migrate":"npx prisma migrate dev --name init --skip-seed && npx prisma db seed",
+    "dev": "npx tsc -b && node dist/server.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
